@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 showWarningOnDirectExecution = False
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.header("Telco Customer Churn Prediction :bar_chart:")
 
