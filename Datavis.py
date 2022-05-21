@@ -2,22 +2,16 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly_express as px
-showWarningOnDirectExecution = False
-
-st.header("INSIGHTS")
-
-st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.header("Telco Customer Churn Prediction :bar_chart:")
 
-df = pd.read_csv(r"C:\Users\user\Downloads\Zainab_Hodroj\Churn.csv")
+df = pd.read_csv("Churn.csv")
 st.write(df.head(10))
 st.write("Data points in Churn is",len(df['Churn']))
        
 col1, col2, col3 = st.columns(3)
 with col1:
-        df['Churn'].value_counts().plot(kind = 'bar', title = 'Bar Graph of Non-Churners vs Churners by Count ', color = 'blue', align = 'center') 
+        df['Churn'].value_counts().plot(kind = 'bar', title = 'Bar Graph of Non-Churners vs Churners by Count (Churn is a 1)', color = 'blue', align = 'center') 
         st.pyplot(plt.show())
      
 with col2:
@@ -27,7 +21,7 @@ with col2:
         tech_support_churn.plot(kind = 'bar', stacked = True)
         plt.ylabel('Count')
         plt.xlabel('Tech Support Count')
-        plt.title('Churn Rate Relative to Uses of Tech Support ')
+        plt.title('Churn Rate Relative to Uses of Tech Support (Churned is a 1)')
         fig= plt.show()
         st.pyplot(fig)
 with col3:
@@ -35,7 +29,6 @@ with col3:
         sns.distplot(df['tenure']);
         st.pyplot(plt.show())
  
-st.write("We can see that non-churners use tech support more often than customers that end up churning. The company should consider finding ways to get people to use Tech Support more often so they churn less.")
 
 st.sidebar.title("Telco Customer Churn Exploratory Data Analysis")       
 st.sidebar.subheader("Filter by Gender")
@@ -59,6 +52,7 @@ customer_selections = st.sidebar.selectbox(
         "Select Customer ID to filter by", customerIDs)
 
 
+st.header("INSIGHTS")
 st.write("Relationship between Gender and Churn")
 gender_churn_contingency = pd.crosstab(df["gender"], df["Churn"])
 st.write(gender_churn_contingency)    
