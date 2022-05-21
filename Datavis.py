@@ -11,20 +11,20 @@ st.markdown("""
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
+    <class="navbar-nav">
+      <class="nav-item active">
         <a class="nav-link disabled" href="#">Home <span class="sr-only"></span></a>
-      </li>
-        <li class="nav-item">
+      <>
+        < class="nav-item">
         <a class="nav-link" href="https://share.streamlit.io/zainabhodroj/churn/main/home.py" target="_blank">Overview</a>
-      </li>
-      <li class="nav-item"> 
+      <>
+      <class="nav-item"> 
         <a class="nav-link" href="https://share.streamlit.io/zainabhodroj/datavis/main/Datavis.py" target="_blank">DataVisulization</a>
-      </li>
-      <li class="nav-item">
+      <>
+      < class="nav-item">
         <a class="nav-link" href="https://share.streamlit.io/zainabhodroj/churn/main/Modelapp.py" target="_blank">Model Prediction</a>
-      </li>
-    </ul>
+      <>
+    <>
   </div>
 </nav>
 """, unsafe_allow_html=True)
